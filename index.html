@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="My 6th webpage">
+    <meta name="keywordss" content="Hello, World! website">
+    <meta name="author" content="Jonathan Pasco-Arnone">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+  </head>
+  <body>
+    <h2>Please enter your age and the current date!</h2>
+    <p>To insure complete accuracy, please do not use capitals or extra spaces</p>
+    <label>Age:</label>
+    <input id="age-id"><br><br>
+    <label>Day of Week:</label>
+    <input id="date-id"><br><br>
+    <button id="submit">Submit</button>
+    <p id="answer"></p>
+    <script>
+      let age;
+      let date;
+      function schoolCriteria() {
+        age = document.getElementById("age-id").value;
+        date = document.getElementById("date-id").value;
+        if (!(date == "saturday" || date == "sunday") && (age < 18)) {
+          document.getElementById("answer").innerHTML = ("Time for school!");
+        } else if (!(date == "saturday" || date == "sunday") && (age > 18)) {
+          document.getElementById("answer").innerHTML = ("Time to go to work!");
+        } else {
+          document.getElementById("answer").innerHTML = ("Time to relax for the weekend!");
+        }
+      }
+      document.getElementById("submit").addEventListener("click",schoolCriteria);
+    </script>
+  </body>
+</html>
